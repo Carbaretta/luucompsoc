@@ -23,7 +23,7 @@
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-  background-color: linear-gradient(45deg, #7b00ff, #00ffef);
+  background: linear-gradient(45deg, #7b00ff, #00ffef);
   color: white;
 }
 
