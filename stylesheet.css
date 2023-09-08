@@ -94,6 +94,50 @@ section #tile{
   background-size: cover;
 }
 
+#eventBanner {
+  background-image: url(assets/media/eventsbackground-filtered.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+/* EVENTS STYLING*/
+.eventsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+    gap: 2vw; /* Adjust the gap between images */
+    padding: 0.5vw;
+}
+
+.eventDescription h1 {
+  font-family: 'Courier New', monospace;
+  color: #fff;
+  font-size: 3vw;
+  text-align: center;
+  font-weight: bold;
+}
+
+.eventDescription p {
+  font-family: 'Montserrat', monospace;
+  color: #fff;
+  font-size: 1.8vw;
+  text-align: center;
+}
+.eventContainer{
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3vh 3vh 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eventContainer:hover{
+  box-shadow: 0 6vh 6vh 0 rgba(0,0,0,0.4);
+}
+
 /*IMAGE GRID STYLINGS*/
 
 /* Style the image grid container */
@@ -103,6 +147,8 @@ section #tile{
     gap: 0.5vw; /* Adjust the gap between images */
     padding: 0.5vw;
 }
+
+
 
 @media (max-width: 600px){
   .image-grid {
@@ -203,6 +249,8 @@ section #tile{
   height: 100%;
   align-items: center;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 .banner #splashTitle {
   font-family: 'Courier New', monospace;
@@ -232,7 +280,9 @@ section #tile{
 .topnav {
   background-color: #222222;
   overflow: hidden;
-  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8)
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  top: 0;
+  width: 100%
 }
 
 
