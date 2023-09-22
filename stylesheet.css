@@ -98,45 +98,136 @@ section #tile{
   background-image: url(assets/media/eventsbackground-filtered.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 20vh;
 }
 
 
 
 /* EVENTS STYLING*/
-.eventsGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
-    gap: 2vw; /* Adjust the gap between images */
-    padding: 0.5vw;
+.carousel-item {
+    /* Make the individual carousel items flexible in size */
+    justify-content: center; /* Center the image horizontally within the carousel item */
+    align-items: center; /* Center the image vertically within the carousel item */
+    height: 90vh;
+}
+.carousel-item img {
+    /* Allow images to scale to their natural size within the flexible carousel items */
+    height: 90vh;
+    
+    object-fit: cover;
 }
 
-.eventDescription h1 {
+.carousel-inner {
+    /* Ensure the carousel items take up 100% of the height of the carousel container */
+    height: 90vh;
+}
+
+.carousel-caption{
+  z-index: 10000; /*Render above the gradient overlay*/
+}
+
+#carouselHolder {
+  border-radius: 2vh;
+  margin: 5vh;
+  overflow: hidden;
+  height: 90vh;
+  box-shadow: 0 6vh 6vh 0 rgba(0,0,0,0.4);
+}
+#eventsCarousel {
+  height: 90vh;
+}
+
+/* .eventsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); Adjust the number of columns as needed 
+    gap: 2vw;  Adjust the gap between images 
+    padding: 0.5vw;
+}
+.eventCaption {
+  flex: 1;
+  width: 100%;
+}
+
+
+
+.eventCaption #eventTitle {
   font-family: 'Courier New', monospace;
   color: #fff;
   font-size: 3vw;
   text-align: center;
   font-weight: bold;
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
 
-.eventDescription p {
+.eventCaption #eventDescription {
   font-family: 'Montserrat', monospace;
   color: #fff;
-  font-size: 1.8vw;
+  font-size: 1.0vw;
+  font-weight: 100;
   text-align: center;
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
+
+.eventCaption #details {
+  font-family: 'Montserrat', monospace;
+  color: #fff;
+  font-size: 1.0vw;
+  font-weight: 100;
+  text-align: left;
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
 .eventContainer{
   position: relative;
   overflow: hidden;
-  box-shadow: 0 3vh 3vh 0 rgba(0,0,0,0.2);
+  box-shadow: 0 0 5vh 1vh rgba(0,0,0,0.5);
   transition: 0.3s;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+  height: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .eventContainer:hover{
   box-shadow: 0 6vh 6vh 0 rgba(0,0,0,0.4);
+  transform: scale(1.1);
+  background: linear-gradient(to bottom, rgba(0, 255, 239, 1), rgba(123, 0, 255, 1));
+  
 }
+
+.eventImage img{
+  filter: saturate(0);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.eventContainer:hover img{
+  transition: opacity 0.3s ease-in-out;
+  filter: saturate(1);
+}
+
+.eventsLinks {
+  display: inline-block;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+  border-radius: 0.5vh;
+  box-shadow: 0 0 5vh 1vh rgba(0,0,0,0.5);
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.eventsLinks img {
+  display: block;
+  text-align: center;
+  height: 5vh;
+  margin: 0 auto;
+
+} */
 
 /*IMAGE GRID STYLINGS*/
 
@@ -150,9 +241,16 @@ section #tile{
 
 
 
-@media (max-width: 600px){
+@media (max-width: 400px){
   .image-grid {
-    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns as needed */
+    grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns as needed */
+    padding: 0;
+  }
+
+}
+@media (max-width: 400px){
+  .image-grid {
+    grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns as needed */
     padding: 0;
   }
 
@@ -178,9 +276,11 @@ section #tile{
 .image-container{
   position: relative;
   overflow: hidden;
+  
 }
 .image-container:hover img {
     transform: scale(1.1); /* Adjust the scale factor as needed */
+    
 }
 
 .image-container:hover .overlay {
@@ -234,7 +334,7 @@ section #tile{
 }
 
 .instagramlink img {
-  height: 2vh;
+  height: 5vh;
 }
 
 .image-container .instagramlink{
@@ -257,6 +357,7 @@ section #tile{
   text-shadow: 5px 5px 10px rgb(0, 0, 0);
   color: #f2f2f2;
   font-size: 72;
+  font-weight: bold;
 }
 
 .banner #bannerLogo{
