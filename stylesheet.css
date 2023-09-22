@@ -109,33 +109,88 @@ section #tile{
     gap: 2vw; /* Adjust the gap between images */
     padding: 0.5vw;
 }
+.eventCaption {
+  margin: 5%;
+  flex: 1;
+}
 
-.eventDescription h1 {
+.eventCaption #eventTitle {
   font-family: 'Courier New', monospace;
   color: #fff;
   font-size: 3vw;
   text-align: center;
   font-weight: bold;
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
 
-.eventDescription p {
+.eventCaption #eventDescription {
   font-family: 'Montserrat', monospace;
   color: #fff;
-  font-size: 1.8vw;
+  font-size: 1.0vw;
+  font-weight: 100;
   text-align: center;
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
+
+.eventCaption #details {
+  font-family: 'Montserrat', monospace;
+  color: #fff;
+  font-size: 1.0vw;
+  font-weight: 100;
+  text-align: left;
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
 .eventContainer{
   position: relative;
   overflow: hidden;
-  box-shadow: 0 3vh 3vh 0 rgba(0,0,0,0.2);
+  box-shadow: 0 0 5vh 1vh rgba(0,0,0,0.5);
   transition: 0.3s;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+  height: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .eventContainer:hover{
   box-shadow: 0 6vh 6vh 0 rgba(0,0,0,0.4);
+  transform: scale(1.1);
+  background: linear-gradient(to bottom, rgba(0, 255, 239, 1), rgba(123, 0, 255, 1));
+  
+}
+
+.eventImage img{
+  filter: saturate(0);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.eventContainer:hover img{
+  transition: opacity 0.3s ease-in-out;
+  filter: saturate(1);
+}
+
+.eventsLinks {
+  display: inline-block;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+  border-radius: 0.5vh;
+  box-shadow: 0 0 5vh 1vh rgba(0,0,0,0.5);
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.eventsLinks img {
+  display: block;
+  text-align: center;
+  height: 5vh;
+  margin: 0 auto;
+
 }
 
 /*IMAGE GRID STYLINGS*/
@@ -178,9 +233,11 @@ section #tile{
 .image-container{
   position: relative;
   overflow: hidden;
+  
 }
 .image-container:hover img {
     transform: scale(1.1); /* Adjust the scale factor as needed */
+    
 }
 
 .image-container:hover .overlay {
@@ -234,7 +291,7 @@ section #tile{
 }
 
 .instagramlink img {
-  height: 2vh;
+  height: 5vh;
 }
 
 .image-container .instagramlink{
